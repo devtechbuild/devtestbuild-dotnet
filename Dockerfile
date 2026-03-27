@@ -2,13 +2,13 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# Copy csproj first (important for restore)
 COPY *.csproj ./
 RUN dotnet restore
 
-# Copy everything else
 COPY . .
-RUN dotnet publish -c Release -o /app/publish
+
+#  IMPORTANT: specify project file
+RUN dotnet publish DevTestBuild-01.csproj -c Release -o /app/publish
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
