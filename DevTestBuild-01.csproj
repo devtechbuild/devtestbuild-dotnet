@@ -7,8 +7,4 @@
     <RootNamespace>DevTestBuild_01</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="Dockerfile" />
-  </ItemGroup>
-
 </Project>
